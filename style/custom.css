@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Rosario:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --home_bg: #E0CABC;
+    --mcq_bg: #B0B8FF;
+    --result_bg: #E0CABC;
+    --timeout_bg: linear-gradient(to right, #FF646D, #F45656);
+    --font_rosario: 'Rosario', sans-serif;
+    --font_raleway: 'Raleway', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* common css ends */
+
+.full-wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+}
+
+.banner-img {
+    width: 50%;
+}
+
+.banner-img img {
+    width: 90%;
+}
+
+.banner-details {
+    width: 50%;
+}
+
+.title {
+    font-family: var(--font_rosario);
+    font-size: 45px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.details-box {
+    width: 603px;
+    height: 301px;
+    border: 2px solid white;
+    background-color: #ffffff;
+    box-shadow: 0px, 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    box-shadow: 0px, 4px, 70px, 0 rgba(0, 0, 0, 0.1);
+}
+
+.instruction {
+    font-family: var(--font_raleway);
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 41px;
+    text-align: center;
+    color: #373434;
+    margin-top: 60px;
+
+}
+
+.topic {
+    font-family: var(--font_raleway);
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 29px;
+    text-align: center;
+    color: #373434;
+    margin: 28px 0px;
+
+}
+
+.call-to-action-button {
+    font-family: var(--font_raleway);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: .05em;
+    text-align: center;
+    height: 70px;
+    width: 420px;
+    color: white;
+    background-color: #000000;
+    margin-left: 95px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* home page ends */
+
+/* mcq page starts */
+
+.exam-contents {
+    width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.exam-header {
+    width: 773px;
+    height: 117px;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin-top: 100px;
+    margin-bottom: 33px;
+}
+
+.exam-header h3 {
+    font-family: var(--font_raleway);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0em;
+}
+
+.finish_button {
+    font-family: var(--font_raleway);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: .05em;
+    text-align: center;
+    height: 56px;
+    width: 228px;
+    color: white;
+    background-color: #000000;
+    margin-left: 95px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#exam-questions {
+    width: 773px;
+}
+
+#single_question {
+    height: 303px;
+    width: 773px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding: 42px;
+}
+
+#question {
+    font-family: var(--font_raleway);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+}
