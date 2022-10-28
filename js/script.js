@@ -8,42 +8,41 @@ loadAllQuestions();
 
 function displayQuestion(data) {
     let questionField = document.getElementById("exam-questions");
+    let score = 0;
 
     for (let i = 0; i < data.length; i++) {
-        console.log(data[i]);
+        // console.log(data[i]);
 
         const question = document.createElement('div');
         question.setAttribute('id', 'single_question');
 
-        const optionsArray = data[i].options.map(o => o);
-        console.log(optionsArray);
 
         question.innerHTML = `
         <h2 id="question"><span id="question${[i + 1]}">${[i + 1]}. </span>  ${data[i].title}</h2>
-        <ul class="option_field">
+        <ul class="option_field" style="margin-left:30px">
             <li class="option">
-                <input type="radio" name="answerofquestion${i + 1}" id="option${i + 100}" value="${optionsArray[0]}" class="answer">
-                <label for="option${i + 1}" >${optionsArray[0]}</label>
+                <input type="radio" name="quizOptionofquestion${i + 1}" id="option${i + 1 +"1"}" value="${data[i].options[0]}" class="answer">
+                <label for="option${i + 1 +"1"}" >${data[i].options[0]}</label>
             </li>
             <li class="option">
-                <input type="radio" name="answerofquestion${i + 1}" id="${i + 1}" value="${optionsArray[1]}" class="answer">
-                <label for="option${i + 1}" ">${optionsArray[1]}</label>
+                <input type="radio" name="quizOptionofquestion${i + 1}" id="option${i + 1 +"2"}" value="${data[i].options[1]}" class="answer">
+                <label for="option${i + 1 +"2"}" ">${data[i].options[1]}</label>
             </li>
             <li class="option">
-                <input type="radio" name="answerofquestion${i + 1}" id="${i + 1}" value="${optionsArray[2]}"  class="answer">
-                <label for="option${i + 1}" >${optionsArray[2]}</label>
+                <input type="radio" name="quizOptionofquestion${i + 1}" id="option${i + 1 +"3"}" value="${data[i].options[2]}"  class="answer">
+                <label for="option${i + 1 +"3"}" >${data[i].options[2]}</label>
             </li>
             <li class="option">
-                <input type="radio" name="answerofquestion${i + 1}" id="${i + 1}" value="${optionsArray[3]}"  class="answer">
-                <label for="option${i + 1}">${optionsArray[3]}</label>
+                <input type="radio" name="quizOptionofquestion${i + 1}" id="option${i + 1 +"4"}" value="${data[i].options[3]}"  class="answer">
+                <label for="option${i + 1 +"4"}">${data[i].options[3]}</label>
             </li>
         </ul>
     `
         questionField.appendChild(question);
-
-
-
     }
+}
+
+function displayResult(){
 
 }
 
