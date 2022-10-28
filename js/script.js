@@ -7,37 +7,42 @@ function loadAllQuestions() {
 loadAllQuestions();
 
 function displayQuestion(data) {
-    let questionField = document.getElementById("question");
-    let optionsField = document.getElementById("option");
-    // let fullQuestionField = document.getElementById("single_question");
+    let questionField = document.getElementById("exam-questions");
 
     for (let i = 0; i < data.length; i++) {
         console.log(data[i]);
 
-    let fullQuestionField = document.getElementById("single_question");
+        const question = document.createElement('div');
+        question.setAttribute('id', 'single_question');
 
-    let question = document.createElement("h3");
-    question.innerText("hasan")
+        const optionsArray = data[i].options.map(o => o);
+        console.log(optionsArray);
+
+        question.innerHTML = `
+        <h2 id="question"><span id="question${[i + 1]}">${[i + 1]}. </span>  ${data[i].title}</h2>
+        <ul class="option_field">
+            <li class="option">
+                <input type="radio" name="answerofquestion${i + 1}" id="option${i + 100}" value="${optionsArray[0]}" class="answer">
+                <label for="option${i + 1}" >${optionsArray[0]}</label>
+            </li>
+            <li class="option">
+                <input type="radio" name="answerofquestion${i + 1}" id="${i + 1}" value="${optionsArray[1]}" class="answer">
+                <label for="option${i + 1}" ">${optionsArray[1]}</label>
+            </li>
+            <li class="option">
+                <input type="radio" name="answerofquestion${i + 1}" id="${i + 1}" value="${optionsArray[2]}"  class="answer">
+                <label for="option${i + 1}" >${optionsArray[2]}</label>
+            </li>
+            <li class="option">
+                <input type="radio" name="answerofquestion${i + 1}" id="${i + 1}" value="${optionsArray[3]}"  class="answer">
+                <label for="option${i + 1}">${optionsArray[3]}</label>
+            </li>
+        </ul>
+    `
+        questionField.appendChild(question);
 
 
-    fullQuestionField.innerHTML(`<h2 id="question"><span id="question${[i]}">${[i]} </span>  ${data[i].titile}</h2>`)
 
-
-
-
-
-        // console.log(questionField);
-        // const question = document.createElement("h2");
-        // question.id("question");
-        // question.innerText(`<span id="question${[i]}">${[i]} </span>  ${data[i].titile}`);
-
-
-        // const questionTitle = document.createElement("h2");
-        // console.log(questionTitle);
-
-        // fullQuestionField.append(questionTitle).innerText(`
-        // <h2 id="question"><span id="question${[i]}">${[i]} </span>  ${data[i].titile}</h2>
-        // `)
     }
 
 }
