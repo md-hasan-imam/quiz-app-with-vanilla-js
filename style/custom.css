@@ -28,7 +28,6 @@ a {
     text-decoration: none;
 }
 
-/* common css ends */
 
 .full-wrapper {
     width: 100%;
@@ -44,6 +43,8 @@ a {
     display: flex;
     align-items: center;
 }
+
+/* common css ends */
 
 .banner-img {
     width: 50%;
@@ -197,4 +198,19 @@ a {
     line-height: 35px;
     letter-spacing: 0em;
     text-align: left;
+    margin-bottom: 13px;
+}
+
+#option {
+    font-family: var(--font_raleway);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+    cursor: pointer;
+}
+#option input{
+    height: 18px;
+    width: 18px;
 }
