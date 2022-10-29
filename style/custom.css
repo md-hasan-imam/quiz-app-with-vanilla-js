@@ -209,7 +209,7 @@ a {
     margin-bottom: 15px;
 }
 
-#question , #question span{
+.question , .question span{
     font-family: var(--font_raleway);
     font-size: 28px;
     font-weight: 700;
