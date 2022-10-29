@@ -1,7 +1,7 @@
 ## Fully Dynamic MCQ app using vanilla javascript
 
-Live link: ` `. <br>
-GitHub code link: ` `.
+Live link: `https://quizzapp-45.netlify.app/ `. <br>
+GitHub code link: `https://github.com/md-hasan-imam/quiz-app-with-vanilla-js `.
 
 ### `Features `
 
