@@ -24,6 +24,7 @@ console.log(questionNameWithAnswer);
 function openMcq() {
     document.getElementById('home').style.display = 'none';
     document.getElementById('mcq_page').style.display = 'flex';
+    startTimer();
 }
 
 function displayQuestion(data) {
@@ -80,6 +81,13 @@ function getValueOfResponse(t) {
         checkedAnswer,
     }
     answersFromUser.push(responseFromUser);
+
+    // trying to disable other option 
+    let uncheckedRadioButtons =
+        document.getElementsByName(`${t.name}`);
+    for (let radioBtn of uncheckedRadioButtons) {
+        radioBtn.setAttribute("disabled", "")
+    }
 }
 
 function displayResult() {
@@ -105,40 +113,40 @@ function displayResult() {
     }, 1500);
 }
 
-// setting 10 minute  countdown timer here  
-document.getElementById("timer").innerHTML = 10 + ":" + 00;
 
-function startTimer() {
-    var presentTime = document.getElementById('timer').innerHTML;
-    var timeArray = presentTime.split(":");
-    var mm = timeArray[0];
-    var check = 0;
+const timer = document.getElementById("timer");
+let timerInterval;
 
-    var s = checkSecond((timeArray[1] - 1));
-    if (s == 59) {
-        mm = mm - 1
-    }
+startTimer = () => {
+    //  the existing timer, in case of a restart
+    clearInterval(timerInterval);
+    // Then we set the variables
+    let second = 0,
+        minute = 10;
 
-    if (mm < 0) {
-        document.getElementById('finish_button').addEventListener('click', () => {
-            displayResult();
-            document.getElementById('result-page').style.display = 'none';
-            document.getElementById('mcq_page').style.display = 'none';
-            document.getElementById('timeout-page').style.display = 'none';
-            document.getElementById('timeout-page').style.display = 'flex';
-        })
-    }
-    document.getElementById('timer').innerHTML = mm + ":" + s;
-    setTimeout(startTimer, 1000);
-}
+    // Next we set a interval every 1000 ms
+    timerInterval = setInterval(function () {
+        timer.classList.toggle("odd");
 
-function checkSecond(sec) {
-    if (sec < 10 && sec >= 0) {
-        sec = "0" + sec
-    }; // add zero in front of numbers < 10
-    if (sec < 0) {
-        sec = "59"
-    };
-    return sec;
-}
-startTimer();
+        // We set the timer text to include a two digit representation
+        timer.innerHTML =
+            (minute < 10 ? "0" + minute : minute) +
+            ":" +
+            (second < 10 ? "0" + second : second);
+
+        // We check if the second equals 0
+        if (second == 0) {
+            // If so, we remove a minute and reset our seconds to 60
+            if (minute === 0) {
+                // Full done
+                clearInterval(timerInterval);
+                document.getElementById('mcq_page').style.display = 'none';
+                document.getElementById('timeout-page').style.display = 'flex';
+            }
+            minute--;
+            second = 60;
+        }
+        second--;
+    }, 1000);
+};
+

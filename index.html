@@ -25,8 +25,9 @@
                 <div class="banner-details">
                     <h2 class="title">MCQ TEST</h2>
                     <div class="details-box">
-                        <h4 class="instruction">Total Questions <span id="total-questions"></span> In <span
-                                id="total-time">10</span> Minute</h4>
+                        <h4 class="instruction">Total Questions <span id="total-questions"
+                                style="font-size:45px;"></span> In <span id="total-time"
+                                style="font-size:45px;">10</span> Minute</h4>
                         <h5 class="topic">MCQ about Tense (English 2nd paper)</h5>
 
                         <button onclick="openMcq()" class="call-to-action-button">Start</button>
@@ -47,7 +48,7 @@
             <div class="exam-contents">
                 <div class="exam-header"
                     style="position: sticky; top:0; box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.129);">
-                    <h3>Remaining Time: <span id="timer" style="margin-left:10px ; font-size: 40px;"></span></h3>
+                    <h3>Remaining Time: <span id="timer" style=" margin-left:10px ; font-size:40px;"></span></h3>
 
                     <button type="button" id="finish_button" class="finish_button"
                         onclick="displayResult()">Finish</button>
@@ -92,16 +93,11 @@
         timeout page starts
     ========================== -->
 
-        <section id="timeout-page"
-            style="background-image:linear-gradient(to right, #FF646D, #F45656); height: 100vh; display: flex;justify-content: center; align-items: center;">
-            <div class="result-box"
-                style="width:435px; height: 521px; background-color: white; border-radius: 20px; padding: 45px;  box-shadow: 0px, 4px, 60px, 5px rgba(0, 0, 0, 0.1);">
+        <section id="timeout-page" style="background-image:linear-gradient(to right, #FF646D, #F45656); height: 100vh; display: flex;justify-content: center; align-items: center;">
+            <div class="result-box" style="width:435px; height: 521px; background-color: white; border-radius: 20px; padding: 45px;  box-shadow: 0px, 4px, 60px, 5px rgba(0, 0, 0, 0.1);">
                 <img src="./assets/images/clock.jpg" alt="" width="272px" style="display: block; margin:0 auto;">
-
-                <h4
-                    style="font-family: Raleway;font-size: 45px;font-weight: 700;line-height: 53px;letter-spacing: 0em; text-align: center; margin-top: 10px; margin-bottom: 45px;">
+                <h4 style="font-family: Raleway;font-size: 45px;font-weight: 700;line-height: 53px;letter-spacing: 0em; text-align: center; margin-top: 10px; margin-bottom: 45px;">
                     TIME OUT </h4>
-
                 <a href="">
                     <button class="medium-call-to-action-button">START AGAIN</button>
                 </a>
@@ -111,8 +107,6 @@
         <!-- =========================
         timeout page ends
     ========================== -->
-
-
 
         <script src="./js/script.js"></script>
 </body>
